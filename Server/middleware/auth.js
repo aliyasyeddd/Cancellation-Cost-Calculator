@@ -7,6 +7,7 @@ const userAuth = async (req, res, next) => {
         // Extract the token from the Authorization header or cookies
         let token;
         
+        // Check if the Authorization header is present and starts with "Bearer "
         const authHeader = req.headers.authorization;
         if (authHeader && authHeader.startsWith("Bearer ")) {
             token = authHeader.split(" ")[1];
