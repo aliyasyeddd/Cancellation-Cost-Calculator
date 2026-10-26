@@ -5,13 +5,21 @@ dotenv.config()
 
 const express = require('express');
 const connectDB = require("./config/database");
+const cookieParser = require("cookie-parser")
 
 const app = express();
 
-//request handler
-app.get('/', (req, res) => {
-  res.send('Hello World!');
-});
+
+const authRouter = require('./routes/auth')
+
+// Middleware to parse JSON request bodies
+app.use(express.json());
+// Middleware to parse cookies from incoming requests
+app.use(cookieParser());
+
+
+
+app.use("/", authRouter);
 
 
 const port = process.env.PORT || 5000;
