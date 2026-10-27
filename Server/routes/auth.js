@@ -10,7 +10,7 @@ const COOKIE_OPTIONS = {
     httpOnly: true,
     secure: true,
     sameSite: "none",
-    expires: new Date(Date.now() + 30 * 24 * 60 * 60 * 1000),
+    maxAge: 30 * 24 * 60 * 60 * 1000,
 };
 
 authRouter.post("/signup", async (req, res) => {
