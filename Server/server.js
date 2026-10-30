@@ -9,7 +9,7 @@ const cookieParser = require("cookie-parser")
 
 const app = express();
 
-
+//routes 
 const authRouter = require('./routes/auth')
 
 // Middleware to parse JSON request bodies
